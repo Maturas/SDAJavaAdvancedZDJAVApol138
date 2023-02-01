@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.SingletonExample.Sun;
 import org.example.StaticVsNonStatic.Person;
 
 /**
@@ -9,6 +10,9 @@ import org.example.StaticVsNonStatic.Person;
 public class App 
 {
     public static void main( String[] args ) {
+        System.out.println(Sun.getInstance().getRadius());
+        System.out.println(Sun.getInstance().getRadius());
+
         System.out.println(Person.getAllPersons().size());
         Person james = new Person("James", 22, "Warsaw");
         System.out.println(Person.getAllPersons().size());
