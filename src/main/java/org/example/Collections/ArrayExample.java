@@ -1,4 +1,4 @@
-package org.example.Collections.Array;
+package org.example.Collections;
 
 // Array is a fixed-size ordered collection
 public class ArrayExample {
