@@ -1,10 +1,14 @@
 package org.example;
 
-import org.example.Inheritance.Shapes.Example;
+import org.example.Encapsulation.VeryPrivateClass;
 
 public class App
 {
     public static void main( String[] args ) {
-        Example.example();
+        VeryPrivateClass privateObj = new VeryPrivateClass();
+        // privateObj.name = "";
+        // privateObj.number = "";
+        // privateObj.doSomething();
+        // VeryPrivateClass.doSomethingStatic();
     }
 }
