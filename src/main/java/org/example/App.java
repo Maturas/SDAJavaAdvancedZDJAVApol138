@@ -1,14 +1,10 @@
 package org.example;
 
-import org.example.Collections.MapExample;
+import org.example.Inheritance.Shapes.Example;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class App
 {
     public static void main( String[] args ) {
-        MapExample.createMapOfSalaries();
+        Example.example();
     }
 }
