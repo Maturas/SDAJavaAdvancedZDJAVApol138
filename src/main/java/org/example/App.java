@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.Interfaces.Example;
+import org.example.Polymorphism.A;
 
 public class App
 {
     public static void main( String[] args ) {
-        Example.example();
+        A.example();
     }
 }
