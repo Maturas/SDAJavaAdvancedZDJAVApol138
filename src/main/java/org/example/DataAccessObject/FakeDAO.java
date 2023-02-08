@@ -2,6 +2,7 @@ package org.example.DataAccessObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class FakeDAO<T> implements DAO<T> {
     protected final List<T> elements;
@@ -22,12 +23,12 @@ public class FakeDAO<T> implements DAO<T> {
     }
 
     @Override
-    public T read(Integer id) {
+    public Optional<T> read(Integer id) {
         if (id >= 0 && id < this.elements.size()) {
-            return this.elements.get(id);
+            return Optional.of(this.elements.get(id));
         }
         else {
-            return null;
+            return Optional.empty();
         }
     }
 

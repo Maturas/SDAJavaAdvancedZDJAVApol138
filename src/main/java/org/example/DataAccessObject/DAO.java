@@ -1,6 +1,7 @@
 package org.example.DataAccessObject;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DAO<T> {
     // CRUD
@@ -10,7 +11,7 @@ public interface DAO<T> {
     // Delete - delete selected object from the data source
 
     Boolean create(T newObj);
-    T read(Integer id);
+    Optional<T> read(Integer id);
     List<T> read();
     Boolean update(Integer id, T updatedObj);
     Boolean delete(Integer id);
