@@ -1,5 +1,8 @@
 package org.example.GenericTypes.AnimalCages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // Generic type constraints
 // T extends SomeClass (T is a subclass of SomeClass)
 // T super SomeClass (T is a superclass of SomeClass)
@@ -40,6 +43,22 @@ public class AnimalCage<T extends Animal> {
         AnimalCage<Cat> catCage = new AnimalCage<>();
         catCage.putIn(cat);
         cat = catCage.takeOut();
+
+        // A collection of generic objects, where the generic type is unknown, but has a constraint
+        // That constaint gives us some functionalities
+        List<AnimalCage<? extends Animal>> cages = new ArrayList<>();
+        cages.add(dogCage);
+        cages.add(catCage);
+
+        // We don't know, what animals are inside these cages
+        // But we know that they ARE animals
+        // Therefore, we can safely upcast them into animals
+        // And invoke Animal methods on them
+        for (AnimalCage<? extends Animal> cage : cages) {
+            Animal animalFromCage = cage.takeOut();
+            animalFromCage.eat();
+            animalFromCage.sleep();
+        }
 
         // AnimalCage<Integer> intCage = new AnimalCage<>();
         // intCage.putIn(42);
