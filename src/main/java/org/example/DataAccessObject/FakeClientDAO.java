@@ -1,12 +1,14 @@
 package org.example.DataAccessObject;
 
+import java.util.Optional;
+
 public class FakeClientDAO extends FakeDAO<Client> {
-    public Client read(String name, String lastName) {
+    public Optional<Client> read(String name, String lastName) {
         for (Client client : this.elements) {
             if (client.getName().equals(name) && client.getLastName().equals(lastName)) {
-                return client;
+                return Optional.of(client);
             }
         }
-        return null;
+        return Optional.empty();
     }
 }
