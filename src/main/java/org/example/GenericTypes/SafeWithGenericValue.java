@@ -3,11 +3,11 @@ package org.example.GenericTypes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericSafe<T> {
+public class SafeWithGenericValue<T> {
     private final String password;
     private final T value;
 
-    public GenericSafe(String password, T value) {
+    public SafeWithGenericValue(String password, T value) {
         this.password = password;
         this.value = value;
     }
@@ -22,10 +22,10 @@ public class GenericSafe<T> {
     }
 
     public static void example() {
-        GenericSafe<Integer> intSafe = new GenericSafe<>("1234", 10000);
-        GenericSafe<String> strSafe = new GenericSafe<>("qwerty", "Mateusz");
-        GenericSafe<Boolean> boolSafe = new GenericSafe<>("zaq1", true);
-        GenericSafe<GenericSafe<List<Integer>>> strangeSafe = new GenericSafe<>("abc", new GenericSafe<>("def", new ArrayList<>()));
+        SafeWithGenericValue<Integer> intSafe = new SafeWithGenericValue<>("1234", 10000);
+        SafeWithGenericValue<String> strSafe = new SafeWithGenericValue<>("qwerty", "Mateusz");
+        SafeWithGenericValue<Boolean> boolSafe = new SafeWithGenericValue<>("zaq1", true);
+        SafeWithGenericValue<SafeWithGenericValue<List<Integer>>> strangeSafe = new SafeWithGenericValue<>("abc", new SafeWithGenericValue<>("def", new ArrayList<>()));
 
         Integer intValue = intSafe.getValue("1234");
         String strValue = strSafe.getValue("qwerty");
