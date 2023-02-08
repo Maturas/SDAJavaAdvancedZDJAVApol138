@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.Exceptions.Example;
+import org.example.GenericTypes.NonGenericSafe;
 
 public class App
 {
     public static void main( String[] args ) {
-        Example.commonExceptions();
+        NonGenericSafe.example();
     }
 }
