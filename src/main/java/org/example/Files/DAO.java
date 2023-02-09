@@ -7,5 +7,6 @@ public interface DAO<T> {
     Boolean create(T newObj);
     Optional<T> read(Integer id);
     List<T> read();
+    Boolean delete(Integer id);
     Boolean delete(T objToDelete);
 }
