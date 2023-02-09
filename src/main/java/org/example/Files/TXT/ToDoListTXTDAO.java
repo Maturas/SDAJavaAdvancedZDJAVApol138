@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class ToDoListDAO implements DAO<String> {
+public class ToDoListTXTDAO implements DAO<String> {
     private final String filePath;
 
-    public ToDoListDAO(String filePath) {
+    public ToDoListTXTDAO(String filePath) {
         this.filePath = filePath;
     }
 

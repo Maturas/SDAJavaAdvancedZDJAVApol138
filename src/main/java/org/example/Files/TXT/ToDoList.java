@@ -10,7 +10,7 @@ public class ToDoList {
     private static String filePath = "D:\\ToDo.txt";
 
     public static void test() {
-        ToDoListDAO dao = new ToDoListDAO(filePath);
+        ToDoListTXTDAO dao = new ToDoListTXTDAO(filePath);
         // dao.create("Write my first files program in Java.");
         // dao.create("Have a tea.");
         // dao.create("Listen to music.");
