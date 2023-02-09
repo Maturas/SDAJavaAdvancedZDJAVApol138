@@ -2,7 +2,7 @@ package org.example.Files.CSV;
 
 import org.example.Files.DAO;
 
-public class BookShop {
+public class BookShopCSV {
     private static String filePath = "D:\\Books.csv";
 
     public static void example() {

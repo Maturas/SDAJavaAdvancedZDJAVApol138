@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.Files.CSV.BookShop;
+import org.example.Files.JSON.BookShopJSON;
 
 public class App
 {
     public static void main( String[] args ) {
-        BookShop.example();
+        BookShopJSON.example();
     }
 }
