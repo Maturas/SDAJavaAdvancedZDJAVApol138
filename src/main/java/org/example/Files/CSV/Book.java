@@ -23,9 +23,19 @@ public class Book {
             this.pagesAmount = Integer.parseInt(record[3]);
             this.soldAmountInMillions = Double.parseDouble(record[4]);
         }
-        catch (NumberFormatException e) {
+        catch (IndexOutOfBoundsException | NumberFormatException e) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public String[] toRecord() {
+        return new String[] {
+                this.title,
+                this.author,
+                this.releaseYear.toString(),
+                this.pagesAmount.toString(),
+                this.soldAmountInMillions.toString()
+        };
     }
 
     public String getTitle() {
