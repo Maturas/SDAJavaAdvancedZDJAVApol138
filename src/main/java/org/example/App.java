@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.Files.JSON.BookShopJSON;
+import org.example.FunctionalProgramming.CalculatingObject;
 
 public class App
 {
     public static void main( String[] args ) {
-        BookShopJSON.example();
+        CalculatingObject.example();
     }
 }

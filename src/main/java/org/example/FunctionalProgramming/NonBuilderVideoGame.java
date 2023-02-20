@@ -1,4 +1,4 @@
-package org.example.FunctionalProgramming.BuilderDesignPattern;
+package org.example.FunctionalProgramming;
 
 public class NonBuilderVideoGame {
     private String title;
