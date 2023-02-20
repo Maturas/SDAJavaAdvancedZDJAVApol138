@@ -1,4 +1,4 @@
-package org.example.FunctionalProgramming;
+package org.example.FunctionalProgramming.FunctionChaining;
 
 public class BuilderVideoGame {
     private String title;

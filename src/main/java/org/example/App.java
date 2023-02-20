@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.FunctionalProgramming.CalculatingObject;
+import org.example.FunctionalProgramming.FunctionalInterface.MessageDisplayer;
 
 public class App
 {
     public static void main( String[] args ) {
-        CalculatingObject.example();
+        MessageDisplayer.example();
     }
 }

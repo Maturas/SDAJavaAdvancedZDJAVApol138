@@ -1,4 +1,4 @@
-package org.example.FunctionalProgramming;
+package org.example.FunctionalProgramming.FunctionChaining;
 
 public class CalculatingObject {
     private Integer value;
@@ -45,6 +45,6 @@ public class CalculatingObject {
     }
 
     public Integer getValue() {
-        return value;
+        return this.value;
     }
 }
