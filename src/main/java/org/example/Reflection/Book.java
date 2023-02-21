@@ -17,8 +17,12 @@ public class Book {
         this.pagesAmount = pagesAmount;
     }
 
-    public void someMethodWithParameters(String str, Integer integer, String something, Double d) {
+    private void printInfo() {
+        System.out.println(getBookInfo());
+    }
 
+    private String someMethodWithParameters(String str, Integer integer, String something, Double d) {
+        return str + " " + integer + " " + something + " " + d;
     }
 
     public String getBookInfo() {

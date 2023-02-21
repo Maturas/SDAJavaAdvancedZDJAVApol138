@@ -11,5 +11,9 @@ public class App
         ReflectionExamples.changeFieldValue(hp, "title", "Chronicles of Narnia");
         ReflectionExamples.changeFieldValue(hp, "author", "C.S. Lewis");
         ReflectionExamples.printAllFieldsWithCurrentValues(hp);
+        ReflectionExamples.invokeMethod(hp, "printInfo");
+        ReflectionExamples.invokeMethodWithReturnValue(hp, "getTitle");
+        ReflectionExamples.invokeMethodWithParametersAndReturnValue(hp, "someMethodWithParameters",
+                new Object[] { "Hello!", 1000, "World!", 55.45 });
     }
 }

@@ -1,9 +1,7 @@
 package org.example.Reflection;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
+import java.lang.reflect.*;
+import java.util.Arrays;
 
 public class ReflectionExamples {
     public static void example(Object obj) {
@@ -111,6 +109,42 @@ public class ReflectionExamples {
             System.out.println("Field with name " + fieldName + " not found!");
         } catch (IllegalAccessException e) {
             System.out.println("Accessing field failed.");
+        }
+    }
+
+    public static void invokeMethod(Object obj, String methodName) {
+        try {
+            Class<?> clazz = obj.getClass();
+            Method method = clazz.getDeclaredMethod(methodName);
+            method.setAccessible(true);
+            method.invoke(obj);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            System.out.println("Method invokation error!");
+        }
+    }
+
+    public static void invokeMethodWithReturnValue(Object obj, String methodName) {
+        try {
+            Class<?> clazz = obj.getClass();
+            Method method = clazz.getDeclaredMethod(methodName);
+            method.setAccessible(true);
+            Object returnValue = method.invoke(obj);
+            System.out.println("Returned value: " + returnValue);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            System.out.println("Method invokation error!");
+        }
+    }
+
+    public static void invokeMethodWithParametersAndReturnValue(Object obj, String methodName, Object[] parameters) {
+        try {
+            Class<?> clazz = obj.getClass();
+            Class<?>[] parameterTypes = Arrays.stream(parameters).map(Object::getClass).toArray(Class<?>[]::new);
+            Method method = clazz.getDeclaredMethod(methodName, parameterTypes);
+            method.setAccessible(true);
+            Object returnValue = method.invoke(obj, parameters);
+            System.out.println("Returned value: " + returnValue);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            System.out.println("Method invokation error!");
         }
     }
 }
