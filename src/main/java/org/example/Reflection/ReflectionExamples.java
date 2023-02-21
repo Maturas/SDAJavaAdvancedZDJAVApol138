@@ -147,4 +147,16 @@ public class ReflectionExamples {
             System.out.println("Method invokation error!");
         }
     }
+
+    public static void createNewInstanceOfClass(Class<?> clazz, Object[] ctorParams) {
+        try {
+            Class<?>[] parameterTypes = Arrays.stream(ctorParams).map(Object::getClass).toArray(Class<?>[]::new);
+            Constructor<?> ctor = clazz.getDeclaredConstructor(parameterTypes);
+            ctor.setAccessible(true);
+            Object newObj = ctor.newInstance(ctorParams);
+            System.out.println(newObj);
+        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |IllegalAccessException e) {
+            System.out.println("Constructor invokation error!");
+        }
+    }
 }

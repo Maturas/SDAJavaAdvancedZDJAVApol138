@@ -15,5 +15,6 @@ public class App
         ReflectionExamples.invokeMethodWithReturnValue(hp, "getTitle");
         ReflectionExamples.invokeMethodWithParametersAndReturnValue(hp, "someMethodWithParameters",
                 new Object[] { "Hello!", 1000, "World!", 55.45 });
+        ReflectionExamples.createNewInstanceOfClass(Book.class, new Object[] { "The Witcher", "Andrzej Sapkowski", 300 });
     }
 }

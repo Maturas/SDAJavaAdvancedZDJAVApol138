@@ -29,6 +29,11 @@ public class Book {
         return this.title + " by: " + this.author + " pages: " + this.pagesAmount;
     }
 
+    @Override
+    public String toString() {
+        return getBookInfo();
+    }
+
     public String getTitle() {
         return title;
     }
