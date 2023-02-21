@@ -73,4 +73,44 @@ public class ReflectionExamples {
             }
         }
     }
+
+    public static void printAllFieldsWithCurrentValues(Object obj) {
+        Class<?> clazz = obj.getClass();
+        Field[] fields = clazz.getDeclaredFields();
+
+        for (Field field : fields) {
+            try {
+                String name = field.getName();
+                String type = field.getType().getSimpleName();
+                field.setAccessible(true);
+                Object value = field.get(obj);
+                String currentValue = value.toString();
+
+                System.out.println(type + " " + name + " " + currentValue);
+            } catch (IllegalAccessException e) {
+                System.out.println("Accessing field failed.");
+            }
+        }
+    }
+
+    public static void changeFieldValue(Object obj, String fieldName, Object newValue) {
+        try {
+            Class<?> clazz = obj.getClass();
+            Field field = clazz.getDeclaredField(fieldName);
+
+            if (field.getType().equals(newValue.getClass())) {
+                field.setAccessible(true);
+                field.set(obj, newValue);
+            }
+            else {
+                System.out.println("New value type mismatch! Field type: "
+                        + field.getType().getSimpleName() + " Value type: "
+                        + newValue.getClass().getSimpleName());
+            }
+        } catch (NoSuchFieldException e) {
+            System.out.println("Field with name " + fieldName + " not found!");
+        } catch (IllegalAccessException e) {
+            System.out.println("Accessing field failed.");
+        }
+    }
 }

@@ -6,6 +6,10 @@ import org.example.Reflection.ReflectionExamples;
 public class App
 {
     public static void main( String[] args ) {
-        ReflectionExamples.example(new Book("Harry Potter", "JK Rowling", 400));
+        Book hp = new Book("Harry Potter", "JK Rowling", 400);
+        ReflectionExamples.printAllFieldsWithCurrentValues(hp);
+        ReflectionExamples.changeFieldValue(hp, "title", "Chronicles of Narnia");
+        ReflectionExamples.changeFieldValue(hp, "author", "C.S. Lewis");
+        ReflectionExamples.printAllFieldsWithCurrentValues(hp);
     }
 }
