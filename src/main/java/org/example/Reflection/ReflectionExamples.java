@@ -6,8 +6,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 public class ReflectionExamples {
-    public static void example() {
-        Class<?> clazz = Book.class;
+    public static void example(Object obj) {
+        example(obj.getClass());
+    }
+
+    public static void example(Class<?> clazz) {
         System.out.println("Name:");
         printClassName(clazz);
         System.out.println();
